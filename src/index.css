@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Custom styles for mobile menu */
+details[open] summary ~ * {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure mobile menu is properly positioned */
+.mobile-menu {
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 1102px) {
+  .mobile-menu a,
+  .mobile-menu summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Optimized image rendering for team photos */
+.team-photo-container {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* High-quality image display */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
